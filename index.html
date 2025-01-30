@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Travel Diary - Main</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <h1>My Travel Diary</h1>
+      <p>내가 다녀간 나라들</p>
+    </header>
+
+    <!-- 메인 컨테이너 -->
+    <main class="map-container">
+      <!-- 세계 지도 이미지를 단순 삽입 (가로 폭 100% 설정) -->
+      <!-- 실제로는 해상도 높은 지도 이미지를 사용하시면 됩니다 -->
+      <img src="images/worldmap.jpg" alt="World Map" class="world-map" />
+
+      <!-- 핀 예시: 한국 -->
+      <a href="country-korea.html" class="pin pin-korea">
+        <div class="tooltip">
+          <img src="images/korea-flag.png" alt="Korea Flag" class="flag" />
+          <p>Seoul, South Korea</p>
+        </div>
+      </a>
+
+      <!-- 핀 예시: 일본 -->
+      <a href="country-japan.html" class="pin pin-japan">
+        <div class="tooltip">
+          <img src="images/japan-flag.png" alt="Japan Flag" class="flag" />
+          <p>Tokyo, Japan</p>
+        </div>
+      </a>
+
+      <!-- 이와 같은 형태로 다른 국가들도 추가하시면 됩니다. -->
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+      <p>&copy; 2025 My Travel Diary</p>
+    </footer>
+  </body>
+</html>

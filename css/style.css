@@ -1,0 +1,172 @@
+/* 기본 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: sans-serif;
+    line-height: 1.5;
+    background-color: #fafafa;
+    color: #333;
+  }
+  
+  /* 헤더, 푸터 공통 스타일 */
+  header, footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #eee;
+    margin-bottom: 1rem;
+  }
+  footer {
+    margin-top: 1rem;
+  }
+  
+  /* ========== 메인 페이지 (index.html) 관련 ========== */
+  .map-container {
+    position: relative;
+    max-width: 1000px; /* 원하는 최대 너비 */
+    margin: 0 auto;    /* 가운데 정렬 */
+  }
+  .world-map {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* 핀 공통 스타일 */
+  .pin {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red; 
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    /* 툴팁 위치를 볼 수 있도록 z-index 설정 */
+    z-index: 10;
+  }
+  .pin .tooltip {
+    display: none; /* 기본은 숨김 */
+    position: absolute;
+    top: -60px; /* 핀 위로 띄우기 */
+    left: -40px; 
+    background-color: #fff;
+    color: #333;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    width: 120px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  .pin:hover .tooltip {
+    display: block;
+  }
+  .flag {
+    width: 30px;
+    height: auto;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* 예시: 한국 핀 좌표 (지도의 실제 픽셀 위치에 맞춰 조정 필요) */
+  .pin-korea {
+    top: 50%;  /* 임의의 값, 지도에 맞게 변경 */
+    left: 60%;
+  }
+  /* 예시: 일본 핀 좌표 */
+  .pin-japan {
+    top: 55%;  /* 임의 */
+    left: 65%;
+  }
+  
+  /* ========== 국가별 상세 페이지 공통 스타일 ========== */
+  .country-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    position: relative;
+  }
+  .country-header .back-button {
+    position: absolute;
+    left: 1rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  .country-header h1 {
+    margin: 0;
+  }
+  
+  .country-info, .tourist-spots, .foods, .photo-gallery {
+    max-width: 800px;
+    margin: 1rem auto;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  .country-info .country-flag {
+    width: 80px;
+    height: auto;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  .country-info h2 {
+    margin-top: 0.5rem;
+  }
+  .tourist-spots .spot, .foods .food {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .tourist-spots .spot img,
+  .foods .food img {
+    width: 150px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* ========== 사진 슬라이드(회전) ========== */
+  .photo-gallery {
+    text-align: center;
+  }
+  .slider {
+    width: 400px;
+    height: 300px;
+    margin: 1rem auto;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ccc;
+  }
+  .slides {
+    width: 400%; /* 슬라이드가 4장이라 가정하면 4배 */
+    height: 100%;
+    display: flex; 
+    animation: slideAnimation 12s infinite;
+  }
+  .slide {
+    width: 100%;
+    flex-shrink: 0; /* 이미지를 한 화면에 하나씩 차지하도록 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slide img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  /* 슬라이드가 자동으로 왼쪽으로 이동하는 단순 예시 */
+  @keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    15% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    40% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    65% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    90% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+  }
