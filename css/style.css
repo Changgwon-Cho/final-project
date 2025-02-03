@@ -44,7 +44,7 @@ body {
   stroke-dashoffset: 3000;
   animation: draw 6s ease-in-out infinite;
 
-  /* 여기서 글씨 크기(경로 크기)를 조절 */
+  /* 글씨 크기(경로 크기)를 조절 */
   transform: scale(1); /* 1.0 → 원본 */
   transform-origin: center; /* 중심 기준으로 확대 */
   transform-box: fill-box; /* SVG의 viewBox 영역 기준으로 해석 */
@@ -83,7 +83,6 @@ body {
   width: 90%;
   max-width: 800px;
   opacity: 0.85;
-  /* 혹은 height: auto; 등 자유롭게 설정 */
 }
 
 /* same style for all pin */
