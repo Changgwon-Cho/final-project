@@ -1,172 +1,235 @@
-/* 기본 리셋 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Dancing Script font */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+/* background */
+body {
+  margin: 0;
+  min-height: 150vh; /* 화면보다 더 길게 해서 스크롤 가능하게 설정 */
+  display: flex;
+  flex-direction: column; /* 요소들을 세로로 배치 */
+  align-items: center; /* 중앙 정렬 */
+  justify-content: flex-start; /* 상단 배치 */
+  background: linear-gradient(to bottom, #87ceeb, #fefcea); /* 하늘 → 모래 */
+  background-size: cover;
+  overflow-y: auto; /* 세로 스크롤 허용 */
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+/* calligraphy */
+.wrapper {
+  position: relative;
+  top: 5vh; /* SVG를 더 위로 올림 */
+  width: 100%;
+  text-align: center;
+}
+
+/* SVG 크기(레이아웃 상 차지하는 공간)는 그대로: 700x200 */
+.calligraphy {
+  width: 700px;
+  height: 300px;
+  /* SVG 내부 경로가 확대되면서 넘칠 수 있으니, 필요하다면 overflow: visible; */
+  overflow: visible;
+}
+
+/* 경로만 확대하기 */
+.calligraphy path {
+  fill: #ff8c00;
+  stroke: #ffd700; /* 예: 태양빛 골드 색상 */
+  stroke-width: 1; /* 선 굵기 */
+
+  /* 필기 애니메이션 그대로 유지 */
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: draw 6s ease-in-out infinite;
+
+  /* 여기서 글씨 크기(경로 크기)를 조절 */
+  transform: scale(1); /* 1.0 → 원본 */
+  transform-origin: center; /* 중심 기준으로 확대 */
+  transform-box: fill-box; /* SVG의 viewBox 영역 기준으로 해석 */
+}
+
+/* 손글씨처럼 나타나는 애니메이션 */
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 3000;
   }
-  body {
-    font-family: sans-serif;
-    line-height: 1.5;
-    background-color: #fafafa;
-    color: #333;
+  50% {
+    stroke-dashoffset: 0;
   }
-  
-  /* 헤더, 푸터 공통 스타일 */
-  header, footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #eee;
-    margin-bottom: 1rem;
+  100% {
+    stroke-dashoffset: 3000;
   }
-  footer {
-    margin-top: 1rem;
+}
+
+/* 지도 컨테이너: 지도 + 핀을 함께 감싸는 영역 */
+.map-container {
+  position: relative; /* 핀이 절대배치될 기준 */
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 50px; /* 아래쪽 여유 공간 예시 */
+}
+
+.map-image {
+  width: 90%;
+  max-width: 800px;
+  opacity: 0.85;
+  /* 혹은 height: auto; 등 자유롭게 설정 */
+}
+
+/* same style for all pin */
+.pin-seoul,
+.pin-tokyo,
+.pin-osaka,
+.pin-fukuoka,
+.pin-danang,
+.pin-bohol,
+.pin-kota {
+  position: absolute;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* left, top으로 이동시킬 핀의 기준 점을 핀의 중간으로 가운데 맞춤 */
+  width: 30px;
+  z-index: 10; /* 지도보다 위에 표기되게 하기 위함 */
+}
+
+/* 각 핀들 위치 조정, 지도의 왼쪽 위가 (0,0) 기준 */
+/* top 값이 커지면 아래로, left 값이 커지면 오른쪽으로 이동 */
+.pin-seoul {
+  top: 22.5%;
+  left: 57.6%;
+}
+
+.pin-tokyo {
+  top: 25.4%;
+  left: 77.3%;
+}
+
+.pin-osaka {
+  top: 27.4%;
+  left: 70.7%;
+}
+
+.pin-fukuoka {
+  top: 29.3%;
+  left: 62.5%;
+}
+
+.pin-danang {
+  top: 60.3%;
+  left: 27.3%;
+}
+
+.pin-bohol {
+  top: 71.4%;
+  left: 52.7%;
+}
+
+.pin-kota {
+  top: 81%;
+  left: 37.4%;
+}
+
+/* pin img */
+.pin-seoul img,
+.pin-tokyo img,
+.pin-osaka img,
+.pin-fukuoka img,
+.pin-danang img,
+.pin-bohol img,
+.pin-kota img {
+  width: 100%; /* 부모 .pin의 너비에 맞춤 */
+  height: auto;
+  cursor: pointer;
+}
+
+/* 마우스 올렸을 때 bounce 애니메이션 발생 */
+.pin-seoul:hover,
+.pin-tokyo:hover,
+.pin-osaka:hover,
+.pin-fukuoka:hover,
+.pin-danang:hover,
+.pin-bohol:hover,
+.pin-kota:hover {
+  animation: bounce 0.5s ease infinite alternate;
+}
+
+/* bounce 애니메이션 정의 */
+@keyframes bounce {
+  0% {
+    /* 핀의 원래 위치: translate(-50%, -50%)를 이미 사용중이므로,
+       여기서는 약간 크기/위치만 조정 */
+    transform: translate(-50%, -50%) scale(1);
   }
-  
-  /* ========== 메인 페이지 (index.html) 관련 ========== */
-  .map-container {
-    position: relative;
-    max-width: 1000px; /* 원하는 최대 너비 */
-    margin: 0 auto;    /* 가운데 정렬 */
+  100% {
+    /* 살짝 위로 올라가면서 확대 */
+    transform: translate(-50%, calc(-50% - 5px)) scale(1.1);
   }
-  .world-map {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  /* 핀 공통 스타일 */
-  .pin {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: red; 
-    border-radius: 50%;
-    cursor: pointer;
-    text-decoration: none;
-    /* 툴팁 위치를 볼 수 있도록 z-index 설정 */
-    z-index: 10;
-  }
-  .pin .tooltip {
-    display: none; /* 기본은 숨김 */
-    position: absolute;
-    top: -60px; /* 핀 위로 띄우기 */
-    left: -40px; 
-    background-color: #fff;
-    color: #333;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    width: 120px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  }
-  .pin:hover .tooltip {
-    display: block;
-  }
-  .flag {
-    width: 30px;
-    height: auto;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* 예시: 한국 핀 좌표 (지도의 실제 픽셀 위치에 맞춰 조정 필요) */
-  .pin-korea {
-    top: 50%;  /* 임의의 값, 지도에 맞게 변경 */
-    left: 60%;
-  }
-  /* 예시: 일본 핀 좌표 */
-  .pin-japan {
-    top: 55%;  /* 임의 */
-    left: 65%;
-  }
-  
-  /* ========== 국가별 상세 페이지 공통 스타일 ========== */
-  .country-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-    position: relative;
-  }
-  .country-header .back-button {
-    position: absolute;
-    left: 1rem;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-  .country-header h1 {
-    margin: 0;
-  }
-  
-  .country-info, .tourist-spots, .foods, .photo-gallery {
-    max-width: 800px;
-    margin: 1rem auto;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 5px;
-  }
-  .country-info .country-flag {
-    width: 80px;
-    height: auto;
-    float: left;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-  }
-  .country-info h2 {
-    margin-top: 0.5rem;
-  }
-  .tourist-spots .spot, .foods .food {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  .tourist-spots .spot img,
-  .foods .food img {
-    width: 150px;
-    height: auto;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* ========== 사진 슬라이드(회전) ========== */
-  .photo-gallery {
-    text-align: center;
-  }
-  .slider {
-    width: 400px;
-    height: 300px;
-    margin: 1rem auto;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid #ccc;
-  }
-  .slides {
-    width: 400%; /* 슬라이드가 4장이라 가정하면 4배 */
-    height: 100%;
-    display: flex; 
-    animation: slideAnimation 12s infinite;
-  }
-  .slide {
-    width: 100%;
-    flex-shrink: 0; /* 이미지를 한 화면에 하나씩 차지하도록 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .slide img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-  /* 슬라이드가 자동으로 왼쪽으로 이동하는 단순 예시 */
-  @keyframes slideAnimation {
-    0% { transform: translateX(0); }
-    15% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    40% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    65% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    90% { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
-  }
+}
+
+/* 말풍선(툴팁)으로 도시 이름 표시 */
+/* 말풍선은 ::after(가상요소)에 city 이름을 넣고,
+   기본적으로 숨겨두었다가 :hover 시 노출 */
+.pin-seoul::after,
+.pin-tokyo::after,
+.pin-osaka::after,
+.pin-fukuoka::after,
+.pin-danang::after,
+.pin-bohol::after,
+.pin-kota::after {
+  display: none; /* 기본 숨김 */
+  position: absolute;
+  bottom: 120%; /* 핀 아이콘 위쪽에 표시 */
+  left: 50%;
+  transform: translateX(-50%); /* 수평 중앙 정렬 */
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+/* 도시별로 말풍선에 표시할 text(도시 이름) */
+.pin-seoul::after {
+  content: "Seoul";
+}
+.pin-tokyo::after {
+  content: "Tokyo";
+}
+.pin-osaka::after {
+  content: "Osaka";
+}
+.pin-fukuoka::after {
+  content: "Fukuoka";
+}
+.pin-danang::after {
+  content: "Da Nang";
+}
+.pin-bohol::after {
+  content: "Bohol";
+}
+.pin-kota::after {
+  content: "Kota Kinabalu";
+}
+
+/* 핀에 마우스 올라가면 말풍선 표시 */
+.pin-seoul:hover::after,
+.pin-tokyo:hover::after,
+.pin-osaka:hover::after,
+.pin-fukuoka:hover::after,
+.pin-danang:hover::after,
+.pin-bohol:hover::after,
+.pin-kota:hover::after {
+  display: block;
+}
