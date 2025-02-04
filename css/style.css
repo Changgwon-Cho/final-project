@@ -9,7 +9,12 @@ body {
   flex-direction: column; /* 요소들을 세로로 배치 */
   align-items: center; /* 중앙 정렬 */
   justify-content: flex-start; /* 상단 배치 */
-  background: linear-gradient(to bottom, #87ceeb, #fefcea); /* 하늘 → 모래 */
+  background: linear-gradient(
+    to bottom,
+    #87ceeb 0%,
+    /* 하늘색 */ #b2ffff 50%,
+    /* 옅은 바다색 */ #fdeeb7 100% /* 모래사장 */
+  );
   background-size: cover;
   overflow-y: auto; /* 세로 스크롤 허용 */
   text-align: center;
@@ -63,6 +68,7 @@ body {
   }
 }
 
+/************************************* Body *************************************/
 /* 지도 컨테이너: 지도 + 핀을 함께 감싸는 영역 */
 .map-container {
   position: relative; /* 핀이 절대배치될 기준 */
@@ -76,7 +82,7 @@ body {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   padding: 10px;
-  margin-bottom: 50px; /* 아래쪽 여유 공간 예시 */
+  margin-bottom: 100px; /* 아래쪽 여유 공간 예시 */
 }
 
 .map-image {
@@ -231,4 +237,89 @@ body {
 .pin-bohol:hover::after,
 .pin-kota:hover::after {
   display: block;
+}
+
+/* 버튼 스타일 및 애니메이션 적용 */
+.back-to-main {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  z-index: 1000;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1000;
+}
+
+.back-to-main a,
+.back-to-top a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #e1306c;
+  color: #fff !important;
+  text-decoration: none !important;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.back-to-main a:visited,
+.back-to-main a:link .back-to-top a:visited,
+.back-to-top a:link {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.back-to-main a:hover,
+.back-to-top a:hover {
+  background-color: #c13584;
+}
+
+/************************************* Footer *************************************/
+
+hr {
+  width: 90%;
+  border: solid 1px;
+}
+
+/* footer 자체 레이아웃 */
+.main-footer {
+  width: 100%;
+  padding: 20px 0; /* 상하여백 20px */
+  text-align: center;
+
+  /* 페이지 가장 아래에 오도록, 부모가 min-height가 있어도
+     일반적으로 맨 아래 배치되지만, 필요 시 position이나 flex 조정 가능 */
+}
+
+/* footer 내부 컨텐츠 컨테이너 (가운데 정렬 등) */
+.footer-content {
+  margin: 0 auto;
+}
+
+/* 인스타 버튼 */
+.instagram-button {
+  display: inline-block;
+  margin-bottom: 10px; /* 아래쪽 여백 */
+  padding: 8px 16px;
+  background-color: #e1306c; /* Instagram 메인 컬러 */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.instagram-button:hover {
+  background-color: #c13584; /* 호버 시 약간 다른 톤 */
+}
+
+/* 저작권 표시 (p 태그) */
+.footer-content p {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #eb1b24;
 }
