@@ -3,15 +3,112 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Da nang</title>
+    <title>Welcome to Da Nang</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <div>
       <h1>Welcome to Da nang</h1>
-      <p>This is the contents of Da nang page</p>
+    </div>
+    <!-- 각 나라 페이지 소개(1. 기본정보 / 2. 관광명소 / 3. 음식) 컨텐츠 -->
+    <div class="info-container">
+      <div class="info-box first">
+        <h2>Introduction to Da nang</h2>
+        <hr />
+        <img
+          src="../img/flags/vietnamflag.png"
+          alt="vietnamflag"
+          class="flag"
+        />
+        <ol>
+          <li id="countryname">Country name : Vietnam</li>
+          <li id="cityname">City name : Da Nang</li>
+          <li id="population">Population : About 1.22 million</li>
+          <li id="features">
+            Major features
+            <ul>
+              <li>Da Nang is a famous tourist destination in Vietnam.</li>
+              <li>
+                To the east of the city, there is a long beach called My Khe
+                Beach.
+              </li>
+              <li>
+                The Han River, which has the same name as the Han River in
+                Seoul, South Korea, also exists in Da Nang.
+              </li>
+              <li>
+                Da Nang has a dry season from January to August with little
+                rain, and a rainy season from September to December with a lot
+                of rain.
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="info-box second">
+        <h2>Tourist Attractions in Da Nang</h2>
+        <hr />
+        <div class="attractions">
+          <div class="attraction">
+            <img src="../img/danang/mykhebeach.jpg" alt="My Khe Beach" />
+            <div class="caption">My Khe Beach</div>
+          </div>
+          <div class="attraction">
+            <img src="../img/danang/banahills.webp" alt="Ba Na Hills" />
+            <div class="caption">Ba Na Hills</div>
+          </div>
+          <div class="attraction">
+            <img src="../img/danang/hoian.webp" alt="Hoi An Old Town" />
+            <div class="caption">Hoi An Old Town</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-box third">
+        <h2>Food in Da Nang</h2>
+        <hr />
+        <div class="foods">
+          <div class="food">
+            <img src="../img/danang/banhxeo.jpg" alt="Banh Xeo" />
+            <div class="caption">Banh Xeo</div>
+          </div>
+          <div class="food">
+            <img src="../img/danang/banhmi.jpg" alt="Banh Mi" />
+            <div class="caption">Banh Mi</div>
+          </div>
+          <div class="food">
+            <img src="../img/danang/miquang.jpg" alt="Mi Quang" />
+            <div class="caption">Mi Quang</div>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- 내가 찍은 사진첩 -->
+    <div class="photo-container">
+      <div class="photo-slider">
+        <img src="../img/seoul/photo1.jpeg" alt="photo1" />
+        <img src="../img/seoul/photo2.jpeg" alt="photo2" />
+        <img src="../img/seoul/photo3.jpeg" alt="photo3" />
+        <img src="../img/seoul/photo4.jpeg" alt="photo4" />
+        <img src="../img/seoul/photo5.jpeg" alt="photo5" />
+        <img src="../img/seoul/photo6.jpeg" alt="photo6" />
+        <img src="../img/seoul/photo7.jpeg" alt="photo7" />
+        <img src="../img/seoul/photo8.jpeg" alt="photo8" />
+        <img src="../img/seoul/photo9.jpeg" alt="photo9" />
+        <img src="../img/seoul/photo10.jpeg" alt="photo10" />
+        <!-- 복제된 10장은 연속 효과를 위함 -->
+        <img src="../img/seoul/photo1.jpeg" alt="photo1" />
+        <img src="../img/seoul/photo2.jpeg" alt="photo2" />
+        <img src="../img/seoul/photo3.jpeg" alt="photo3" />
+        <img src="../img/seoul/photo4.jpeg" alt="photo4" />
+        <img src="../img/seoul/photo5.jpeg" alt="photo5" />
+        <img src="../img/seoul/photo6.jpeg" alt="photo6" />
+        <img src="../img/seoul/photo7.jpeg" alt="photo7" />
+        <img src="../img/seoul/photo8.jpeg" alt="photo8" />
+        <img src="../img/seoul/photo9.jpeg" alt="photo9" />
+        <img src="../img/seoul/photo10.jpeg" alt="photo10" />
+      </div>
+    </div>
     <div class="back-to-main">
       <a href="../index.html">Back to Main</a>
     </div>

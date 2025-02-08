@@ -1,14 +1,14 @@
-/* Dancing Script font */
+/*********************** Dancing Script font ***********************/
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
 
-/* background */
+/*********************** background ***********************/
 body {
   margin: 0;
   min-height: 150vh; /* 화면보다 더 길게 해서 스크롤 가능하게 설정 */
   display: flex;
-  flex-direction: column; /* 요소들을 세로로 배치 */
-  align-items: center; /* 중앙 정렬 */
-  justify-content: flex-start; /* 상단 배치 */
+  flex-direction: column; /* 요소들을 세로(위->아래)로 배치 */
+  align-items: center; /* 교차축(가로) 방향으로 중앙 정렬 */
+  justify-content: flex-start; /* 주축(세로) 방향으로 시작 지점 정렬 / 상단 배치 */
   background: linear-gradient(
     to bottom,
     #87ceeb 0%,
@@ -22,7 +22,7 @@ body {
   z-index: 0;
 }
 
-/* calligraphy */
+/*********************** calligraphy ***********************/
 .wrapper {
   position: relative;
   top: 5vh; /* SVG를 더 위로 올림 */
@@ -68,21 +68,22 @@ body {
   }
 }
 
-/************************************* Body *************************************/
+/****************************************************** Body ******************************************************/
+/*********************** index.html ***********************/
 /* 지도 컨테이너: 지도 + 핀을 함께 감싸는 영역 */
 .map-container {
   position: relative; /* 핀이 절대배치될 기준 */
   width: 100%;
   max-width: 900px;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* 기본값 : row(왼->오) */
+  justify-content: center; /* 주축 방향(가로)으로 중앙 정렬 */
+  align-items: center; /* 교차축 방향(세로)으로 중앙 정렬 */
   border: 2px solid rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   padding: 10px;
-  margin-bottom: 100px; /* 아래쪽 여유 공간 예시 */
+  margin-bottom: 100px; /* 아래쪽 여유 공간 */
 }
 
 .map-image {
@@ -197,7 +198,7 @@ body {
   bottom: 120%; /* 핀 아이콘 위쪽에 표시 */
   left: 50%;
   transform: translateX(-50%); /* 수평 중앙 정렬 */
-  white-space: nowrap;
+  white-space: nowrap; /* 가로 정렬 유지 */
   background: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 5px 8px;
@@ -239,7 +240,7 @@ body {
   display: block;
 }
 
-/* 버튼 스타일 및 애니메이션 적용 */
+/*********************** back to main & back to top 버튼 디자인 ***********************/
 .back-to-main {
   position: fixed;
   left: 10px;
@@ -278,12 +279,197 @@ body {
   background-color: #c13584;
 }
 
-/************************************* Footer *************************************/
-
-hr {
+/*********************** 각 나라 페이지 소개 (1. 기본정보 / 2. 관광명소 / 3. 음식) 컨텐츠 디자인 ***********************/
+/*********************** 전체 컨텐츠를 담을 컨테이너 ***********************/
+.info-container {
   width: 90%;
-  border: solid 1px;
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column; /* 세로 방향(위->아래) 정렬 */
+  gap: 20px;
 }
+
+/*********************** 각 박스 기본 공통 디자인 ***********************/
+.info-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+}
+
+.info-box h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.info-box hr {
+  border: 1px solid #8fd7ef;
+  margin: 10px 0;
+}
+
+/*********************** 각 박스 위치 조정 ***********************/
+.info-box.first,
+.info-box.third {
+  /* 기본 좌측 정렬 */
+  margin: 0;
+}
+
+.info-box.second {
+  /* 얘만 우측 정렬 */
+  margin-left: auto;
+}
+
+/*********************** 컨테이너1(기본정보) ***********************/
+.info-box.first {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  /* 컨테이너 전체에 여백을 조금 줌 */
+  padding: 10px;
+  width: 80%;
+  /* 최소 높이를 지정하여 국기가 너무 작게 표시되지 않도록 함 (필요에 따라 조절) */
+  min-height: 250px;
+  /* 내부의 float 요소를 감싸기 위해 */
+  overflow: hidden;
+  position: relative;
+}
+
+/* 국기 이미지 스타일 (float 방식) */
+.info-box.first img.flag {
+  float: left;
+  /* 상하좌우에 10px 여백 부여 */
+  margin: 10px;
+  /* 최대 너비는 200px로 제한 */
+  max-width: 200px;
+  /* 부모 높이(첫 박스의 높이)에서 위, 아래 여백(10px씩)을 뺀 높이로 설정 */
+  height: calc(100% - 20px);
+  /* 비율 유지하며 꽉 채우기 */
+  object-fit: cover;
+  border: solid 1px #8fd7ef;
+}
+
+/* ol 요소 - 국기 오른쪽에 일정 간격(margin-left)을 주고, 
+   컨테이너 패딩 10px + ol의 상단 마진 10px = 20px에서 텍스트 시작하여 국기와 수평 정렬 */
+.info-box.first ol {
+  margin: 10px 0 0 240px; /* top: 10px, right: 0, bottom: 0, left: 240px */
+  padding: 0 10px; /* 좌우 padding만 부여 */
+  text-align: left;
+  list-style-type: decimal; /* 순서 있는 번호 목록 */
+}
+
+/* 목록 항목 간의 간격 */
+.info-box.first li {
+  margin-bottom: 10px;
+}
+
+/* li 내부의 ul 스타일 - 글머리 기호를 채워진 원(disc)으로 설정 */
+.info-box.first li ul {
+  padding-left: 20px;
+  list-style-type: disc; /* 채워진 동그라미 */
+}
+
+/* info-box.first 내의 ol, ul에 공통 스타일 적용 (폰트, 줄 간격 등) */
+.info-box.first ol,
+.info-box.first ul {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/*********************** 컨테이너2(관광명소) ***********************/
+/* attractions 컨테이너에 CSS Grid 적용 */
+.info-box.second .attractions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3개의 동일한 열 */
+  gap: 20px;
+}
+
+/* 각 attraction 블록 (이미지와 캡션을 담은 div) */
+.info-box.second .attraction {
+  text-align: center;
+}
+
+/* 이미지 스타일: 각 attraction의 너비에 맞춰 100%로 채움 */
+.info-box.second .attraction img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* 이미지 비율을 유지하며 영역을 채움 */
+  border-radius: 10px;
+}
+
+/* 캡션 스타일 */
+.info-box.second .attraction .caption {
+  margin-top: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/*********************** 컨테이너3(음식) ***********************/
+/* foods 컨테이너에 CSS Grid 적용 */
+.info-box.third .foods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3개의 동일한 열 */
+  gap: 20px;
+}
+
+/* 각 food 블록 (이미지와 캡션을 담은 div) */
+.info-box.third .food {
+  text-align: center;
+}
+
+/* 이미지 스타일: 각 food의 너비에 맞춰 100%로 채움 */
+.info-box.third .food img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* 이미지 비율을 유지하며 영역을 채움 */
+  border-radius: 10px;
+}
+
+/* 캡션 스타일 */
+.info-box.third .food .caption {
+  margin-top: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/*********************** 사진첩 디자인 부분 ***********************/
+.photo-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  overflow: hidden;
+  border: solid 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+}
+
+.photo-slider {
+  display: flex;
+  align-items: center; /* 교차축 방향으로 중앙 정렬 */
+  animation: slide 30s linear infinite; /* 오른쪽에서 왼쪽으로 스크롤되는 애니메이션 적용 */
+}
+
+.photo-slider img {
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+/* 슬라이드 애니메이션 동작 부분 */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-3100px);
+  }
+}
+
+/****************************************************** Footer ******************************************************/
 
 /* footer 자체 레이아웃 */
 .main-footer {
