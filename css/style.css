@@ -1,6 +1,10 @@
 /*********************** Dancing Script font ***********************/
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
 
+* {
+  font-family: Arial, sans-serif;
+}
+
 /*********************** background ***********************/
 body {
   margin: 0;
@@ -40,7 +44,7 @@ body {
 
 /* 경로만 확대하기 */
 .calligraphy path {
-  fill: #ff8c00;
+  fill: #fbefb9;
   stroke: #ffd700; /* 예: 태양빛 골드 색상 */
   stroke-width: 1; /* 선 굵기 */
 
@@ -371,7 +375,6 @@ body {
 /* info-box.first 내의 ol, ul에 공통 스타일 적용 (폰트, 줄 간격 등) */
 .info-box.first ol,
 .info-box.first ul {
-  font-family: "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -400,7 +403,6 @@ body {
 /* 캡션 스타일 */
 .info-box.second .attraction .caption {
   margin-top: 8px;
-  font-family: Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -428,7 +430,6 @@ body {
 /* 캡션 스타일 */
 .info-box.third .food .caption {
   margin-top: 8px;
-  font-family: Arial, sans-serif;
   font-size: 16px;
 }
 
