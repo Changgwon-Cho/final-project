@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Seoul</title>
+    <!-- internal CSS -->
     <style>
       h1 {
         font-family: Dancing Script, Arial, sans-serif;
@@ -16,15 +17,17 @@
   </head>
 
   <body>
+    <!-- header -->
     <header>
       <div>
         <h1 style="color: #fbefb9; font-size: 140px">Welcome to Seoul</h1>
       </div>
     </header>
 
-    <!-- 각 나라 페이지 소개(1. 기본정보 / 2. 관광명소 / 3. 음식) 컨텐츠 -->
+    <!-- Introduction to each country/city contents -->
     <main>
       <div class="info-container">
+        <!-- Introduction to country/city -->
         <div class="info-box first">
           <h2>Introduction to Seoul</h2>
           <hr />
@@ -46,6 +49,7 @@
             </li>
           </ol>
         </div>
+        <!-- Introduction to country/city attractions -->
         <div class="info-box second">
           <h2>Tourist Attractions in Seoul</h2>
           <hr />
@@ -70,6 +74,7 @@
             </div>
           </div>
         </div>
+        <!-- Introduction to country/city food -->
         <div class="info-box third">
           <h2>Food in Seoul</h2>
           <hr />
@@ -90,7 +95,7 @@
         </div>
       </div>
 
-      <!-- 내가 찍은 사진첩 -->
+      <!-- Photo slider -->
       <div class="photo-container">
         <div class="photo-slider">
           <img src="../img/seoul/photo1.jpeg" alt="photo1" />
@@ -103,7 +108,7 @@
           <img src="../img/seoul/photo8.jpeg" alt="photo8" />
           <img src="../img/seoul/photo9.jpeg" alt="photo9" />
           <img src="../img/seoul/photo10.jpeg" alt="photo10" />
-          <!-- 복제된 10장은 연속 효과를 위함 -->
+          <!-- the same images for cascade effect -->
           <img src="../img/seoul/photo1.jpeg" alt="photo1" />
           <img src="../img/seoul/photo2.jpeg" alt="photo2" />
           <img src="../img/seoul/photo3.jpeg" alt="photo3" />
@@ -118,19 +123,20 @@
       </div>
     </main>
 
-    <!-- 네비게이션 버튼 -->
+    <!-- back-to-main -->
     <div class="back-to-main">
       <a href="../index.html">Back to Main</a>
     </div>
 
+    <!-- back-to-top -->
     <div class="back-to-top">
       <a href="#">Back to Top</a>
     </div>
 
-    <!-- Footer 위에 float 요소가 있어도 깨지지 않도록 적용함 -->
+    <!-- footer remains intact even when there are floating elements above it later -->
     <div class="clearfix"></div>
 
-    <!-- 푸터 -->
+    <!-- footer -->
     <footer id="main-footer">
       <div class="footer-content">
         <a
