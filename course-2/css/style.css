@@ -1,15 +1,17 @@
-/*********************** Dancing Script font for each pages h1 ***********************/
+/*********************** font ***********************/
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-/*********************** Arial font for others ***********************/
+/*********************** for all ***********************/
 * {
-  font-family: Arial, sans-serif;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-/*********************** background ***********************/
+/*********************** body ***********************/
 body {
-  margin: 0;
+  font-family: "Poppins", sans-serif;
   min-height: 150vh;
   display: flex;
   flex-direction: column;
@@ -21,52 +23,140 @@ body {
   text-align: center;
   position: relative;
   z-index: 0;
+  padding: 32px;
 }
 
-/*********************** calligraphy ***********************/
-.wrapper {
-  position: relative;
-  top: 5vh;
+/*********************** all pages header ***********************/
+header {
   width: 100%;
-  text-align: center;
 }
 
-.calligraphy {
-  width: 700px;
-  height: 300px;
-  overflow: visible;
+nav {
+  padding: 16px 32px;
+  padding-top: 0;
+  min-height: 50px;
+  display: flex;
 }
 
-.calligraphy path {
-  fill: #fbefb9;
-  stroke: #ffd700;
-  stroke-width: 1;
-
-  /* remain the calligraphy animation */
-  stroke-dasharray: 3000;
-  stroke-dashoffset: 3000;
-  animation: draw 6s ease-in-out infinite;
-
-  /* adjust the font size(path size) */
-  transform: scale(1);
-  transform-origin: center;
-  transform-box: fill-box;
+.title-navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-/* animation like hand-written */
-@keyframes draw {
-  0% {
-    stroke-dashoffset: 3000;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: 3000;
-  }
+.title-logo {
+  font-family: "Dancing Script", sans-serif;
+  -webkit-text-stroke: 1px #ffd700;
+  color: #fbefb9;
+  font-size: 2rem;
+}
+
+.nav-options {
+  display: flex;
+}
+
+.nav-options ul {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-options ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav-options ul li a:hover {
+  background: linear-gradient(to right, #ffa500 0%, #fff300 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#current-page {
+  background: linear-gradient(to right, #ffa500 0%, #ff0000 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.div-header-main {
+  width: 100%;
+  border: 1px solid #b2ffff;
+}
+
+/*********************** each city pages header ***********************/
+.header-title {
+  font-family: Dancing Script, Arial, sans-serif;
+  -webkit-text-stroke: 2px #ffd700;
+  color: #fbefb9;
+  font-size: 4rem;
+  width: 100%;
 }
 
 /****************************************************** Body ******************************************************/
+main {
+  width: 100%;
+  padding: 32px 0;
+}
+
+.country-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.country-info h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.country-info hr {
+  border: 1px solid #8fd7ef;
+  margin: 10px 0;
+}
+
+.country-info.left {
+  align-self: flex-start;
+}
+
+.country-info.right {
+  align-self: flex-end;
+}
+
+.country-info.left, .country-info.right {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 10px;
+  width: 80%;
+  min-height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-container {
+  display: flex;
+  gap: 3rem;
+}
+
+.country-info.left img, .country-info.right img {
+  margin: 10px;
+  max-width: 300px;
+  max-height: 200px;
+  object-fit: cover;
+  border: solid 1px #8fd7ef;
+}
+
+.country-info.left ul, .country-info.right ul {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.country-info.left li, .country-info.right li {
+  margin-bottom: 10px;
+}
+
+
 
 /*********************** index.html ***********************/
 /* map + pin */
@@ -281,86 +371,7 @@ body {
   border: solid 2px white;
 }
 
-/*********************** Introduction to each country/city contents design ***********************/
-/*********************** container to hold all the content ***********************/
-.info-container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
 
-/*********************** default common design for each box ***********************/
-.info-box {
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 20px;
-  width: 80%;
-}
-
-.info-box h2 {
-  margin: 0;
-  padding: 0;
-}
-
-.info-box hr {
-  border: 1px solid #8fd7ef;
-  margin: 10px 0;
-}
-
-/*********************** adjust the position of each box ***********************/
-.info-box.first,
-.info-box.third {
-  align-self: flex-start;
-}
-
-.info-box.second {
-  align-self: flex-end;
-}
-
-/*********************** container1 (introduction) ***********************/
-.info-box.first {
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 10px;
-  width: 80%;
-  min-height: 250px;
-  overflow: hidden;
-  position: relative;
-}
-
-.info-box.first img.flag {
-  float: left;
-  margin: 10px;
-  max-width: 200px;
-  height: calc(100% - 20px);
-  object-fit: cover;
-  border: solid 1px #8fd7ef;
-}
-
-.info-box.first ol {
-  margin: 10px 0 0 240px;
-  padding: 0 10px;
-  text-align: left;
-  list-style-type: decimal;
-}
-
-.info-box.first li {
-  margin-bottom: 10px;
-}
-
-.info-box.first li ul {
-  padding-left: 20px;
-  list-style-type: disc;
-}
-
-.info-box.first ol,
-.info-box.first ul {
-  font-size: 16px;
-  line-height: 1.5;
-}
 
 /*********************** container2 (attractions) ***********************/
 .info-box.second .attractions {
@@ -445,13 +456,6 @@ body {
   }
 }
 
-/* clear the float above the footer later */
-.clearfix {
-  clear: both;
-  display: block;
-  width: 100%;
-  height: 0;
-}
 
 /****************************************************** Footer ******************************************************/
 #main-footer {
