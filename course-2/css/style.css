@@ -23,7 +23,7 @@ body {
   text-align: center;
   position: relative;
   z-index: 0;
-  padding: 32px;
+  padding: 16px 32px;
 }
 
 /*********************** all pages header ***********************/
@@ -79,6 +79,7 @@ nav {
   -webkit-text-fill-color: transparent;
 }
 
+/* divide the header and main hr */
 .div-header-main {
   width: 100%;
   border: 1px solid #b2ffff;
@@ -124,14 +125,22 @@ main {
   align-self: flex-end;
 }
 
-.country-info.left, .country-info.right {
+.country-info.left,
+.country-info.right {
+  position: relative;
   background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   padding: 10px;
   width: 80%;
   min-height: 250px;
-  overflow: hidden;
-  position: relative;
+  overflow: visible;
+}
+
+.country-info.left:hover,
+.country-info.right:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
 }
 
 .content-container {
@@ -139,26 +148,142 @@ main {
   gap: 3rem;
 }
 
-.country-info.left img, .country-info.right img {
+.country-info.left img,
+.country-info.right img {
   margin: 10px;
   max-width: 300px;
+  width: 100%;
+  height: auto;
   max-height: 200px;
   object-fit: cover;
   border: solid 1px #8fd7ef;
 }
 
-.country-info.left ul, .country-info.right ul {
+.country-info.left ul,
+.country-info.right ul {
   text-align: left;
   margin-top: 10px;
 }
 
-.country-info.left li, .country-info.right li {
+.country-info.left li,
+.country-info.right li {
   margin-bottom: 10px;
 }
 
+.leftside-famous-cities-box {
+  position: absolute;
+  top: 50%;
+  right: -23%;
+  transform: translateY(-50%);
+  width: 20%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: solid 1px #8fd7ef;
+  opacity: 0;
+}
 
+.rightside-famous-cities-box {
+  position: absolute;
+  top: 50%;
+  left: -23%;
+  transform: translateY(-50%);
+  width: 20%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: solid 1px #8fd7ef;
+  opacity: 0;
+}
 
-/*********************** index.html ***********************/
+@keyframes fadeHold {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.country-info.left:hover .leftside-famous-cities-box,
+.country-info.right:hover .rightside-famous-cities-box {
+  animation: fadeHold 5s forwards;
+}
+
+.leftside-famous-cities-box h3,
+.rightside-famous-cities-box h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: 550;
+}
+
+.leftside-famous-cities-box ul,
+.rightside-famous-cities-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.leftside-famous-cities-box li,
+.rightside-famous-cities-box li {
+  font-size: 1rem;
+}
+
+.leftside-famous-cities-box a,
+.rightside-famous-cities-box a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.leftside-famous-cities-box a:hover,
+.rightside-famous-cities-box a:hover {
+  background: linear-gradient(to right, #ffa500 0%, #fff300 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* divide the main and footer hr */
+.div-main-footer {
+  width: 100%;
+  border: 1px solid #ffd683;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 2%;
+  bottom: 1%;
+  z-index: 1000;
+}
+
+/****************************************************** Footer ******************************************************/
+
+.footer {
+  width: 100%;
+}
+
+.footer-content {
+  padding: 16px 32px;
+  padding-bottom: 0;
+  display: flex;
+}
+
+.footer-content p {
+  font-size: 0.813rem;
+}
+
+/****************************************************** below side for change to course2 final ******************************************************/
+/****************************************************** below side for change to course2 final ******************************************************/
+/****************************************************** below side for change to course2 final ******************************************************/
+/****************************************************** below side for change to course2 final ******************************************************/
+
+/*********************** about.html ***********************/
 /* map + pin */
 .map-container {
   position: relative;
@@ -328,7 +453,7 @@ main {
 }
 
 /*********************** back to main & back to top design ***********************/
-.back-to-main {
+/* .back-to-main {
   position: fixed;
   left: 10px;
   bottom: 10px;
@@ -369,9 +494,7 @@ main {
 .back-to-main a:active,
 .back-to-top a:active {
   border: solid 2px white;
-}
-
-
+} */
 
 /*********************** container2 (attractions) ***********************/
 .info-box.second .attractions {
@@ -456,17 +579,7 @@ main {
   }
 }
 
-
 /****************************************************** Footer ******************************************************/
-#main-footer {
-  width: 100%;
-  padding: 20px 0;
-  text-align: center;
-}
-
-#main-footer .footer-content {
-  margin: 0 auto;
-}
 
 .instagram-link {
   display: inline-block;
@@ -482,10 +595,4 @@ main {
 
 .instagram-link:hover {
   background-color: #c13584;
-}
-
-.footer-content p {
-  margin: 8px 0 0;
-  font-size: 13px;
-  color: #eb1b24;
 }
