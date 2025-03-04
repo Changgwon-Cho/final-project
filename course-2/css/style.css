@@ -262,6 +262,74 @@ main {
   z-index: 1000;
 }
 
+.back-to-home {
+  position: fixed;
+  left: 2%;
+  bottom: 1%;
+  z-index: 1000;
+}
+
+/****************************************************** each cities info .html ******************************************************/
+.each-cities-info {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.each-cities-info h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.each-cities-info hr {
+  border: 1px solid #8fd7ef;
+  margin: 10px 0;
+}
+
+.each-cities-info-food {
+  align-self: flex-end;
+}
+
+.each-cities-info-attraction,
+.each-cities-info-food {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 10px;
+  width: 80%;
+  min-height: 250px;
+  overflow: visible;
+}
+
+.each-cities-info-attraction .attractions,
+.each-cities-info-food .foods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.each-cities-info-attraction .attraction,
+.each-cities-info-food .food {
+  text-align: center;
+}
+
+.each-cities-info-attraction .attraction img,
+.each-cities-info-food .food img {
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.each-cities-info-attraction .attraction .caption,
+.each0cities-info-food .food .caption {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+}
+
 /****************************************************** Footer ******************************************************/
 
 .footer {
@@ -497,30 +565,30 @@ main {
 } */
 
 /*********************** container2 (attractions) ***********************/
-.info-box.second .attractions {
+/* .each-cities-info.attraction .attractions {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.info-box.second .attraction {
+.each-cities-info.attraction .attraction {
   text-align: center;
 }
 
-.info-box.second .attraction img {
+.each-cities-info.attraction .attraction img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.info-box.second .attraction .caption {
+.each-cities-info.attraction .attraction .caption {
   display: inline;
   font-size: 16px;
-}
+} */
 
 /*********************** container3 (food) ***********************/
-.info-box.third .foods {
+/* .info-box.third .foods {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -540,7 +608,7 @@ main {
 .info-box.third .food .caption {
   display: inline;
   font-size: 16px;
-}
+} */
 
 /*********************** photo-slider design ***********************/
 .photo-container {
