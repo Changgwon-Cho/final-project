@@ -94,7 +94,7 @@ nav {
   width: 100%;
 }
 
-/****************************************************** Body ******************************************************/
+/****************************************************** Body & Index.html ******************************************************/
 main {
   width: 100%;
   padding: 32px 0;
@@ -269,10 +269,57 @@ main {
   z-index: 1000;
 }
 
+/****************************************************** About.html ******************************************************/
+.about-area {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-area h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.about-area hr {
+  border: 1px solid #8fd7ef;
+  margin: 10px 0;
+}
+
+.about-info {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 10px;
+  width: 80%;
+  min-height: 250px;
+  overflow: visible;
+}
+
+.about-info.second {
+  align-self: flex-end;
+}
+
+.about-info p {
+  text-align: start;
+  padding: 10px;
+}
+
+.about-info ul {
+  margin-left: 20px;
+}
+.about-info li {
+  text-align: start;
+  padding-bottom: 10px;
+}
+
+
 /****************************************************** each cities info .html ******************************************************/
 .each-cities-info {
   width: 90%;
-  margin: 40px auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -324,14 +371,13 @@ main {
 }
 
 .each-cities-info-attraction .attraction .caption,
-.each0cities-info-food .food .caption {
+.each-cities-info-food .food .caption {
   display: flex;
   justify-content: center;
   font-size: 1rem;
 }
 
 /****************************************************** Footer ******************************************************/
-
 .footer {
   width: 100%;
 }
