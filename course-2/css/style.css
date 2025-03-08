@@ -54,7 +54,7 @@ body {
   backdrop-filter: blur(16px);
   flex-direction: column;
   padding: 16px 24px;
-  gap: 32px;
+  gap: 2rem;
   display: none;
 }
 
@@ -67,8 +67,7 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding-left: 24px;
-  gap: 48px;
+  gap: 3rem;
 }
 
 .openMenu ul li a:link,
