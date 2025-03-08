@@ -28,77 +28,138 @@
     <hr class="div-header-main" />
 
     <main>
-      <section>
+      <section class="about-info-section">
         <div class="about-area">
-            <div class="about-info first">
-              <h2>About My Website</h2>
-              <hr />
-              <p>My Travel Diary is a website created to document the memories of my travels with my girlfriend after the COVID-19 pandemic. Many Koreans record their cherished travel moments in various but common ways, such as photos, blogs, or diaries. However, as a web developer, I wanted to personally build a website where I could document our memories one by one. Through this process, I aim to continuously improve my skills by adding new features to the site, making the experience even more meaningful. Thank you for visiting my humble page. I hope you have a great time!</p>
-            </div>
-            <div class="about-info second">
-              <h2>Features of My Website</h2>
-              <hr />
-              <ul>
-                <li>Users can check the basic information about the countries of the cities I have visited on the main page, including the capital, language, currency, time zone, famous cities, best travel seasons, and more.</li>
-                <li>On the main page, when users hover over the box introducing each country, they can see a list of cities I have visited. By clicking on a city name, they will be redirected to the respective city page.</li>
-                <li>On each city’s introduction page, users can explore famous tourist attractions, local foods, and photos I personally took in a slider format.</li>
-                <li>Users can navigate between pages using the top navigation bar. On the About page, they can find a brief introduction to my website and click on the map icon to view all the cities I have visited at a glance on a map.</li>
-                <li>On the Contact page, users can send me their basic information and navigate to my social media and GitHub.</li>
-                <li>Users can experience a flexible website on any device thanks to the responsive web design applied to the site.</li>
-              </ul>
-            </div>
-            <div class="about-info third">
-              <h2>Wait for These Features</h2>
-              <hr/>
-              <ul>
-                <li>I plan to apply more diverse animations to each page, transforming the website into a more engaging and enjoyable experience.</li>
-                <li>I plan to create a bulletin board where users can visit the pages of the places I have traveled to and share various opinions and useful information.</li>
-                <li>Instead of a 2D flat map, I plan to add a feature that allows users to explore various countries I will travel to by rotating a 3D globe, making it easier and more enjoyable to access travel information.</li>
-                <li>I plan to add a feature that allows users to switch between a clear, blue ocean background and a sunset-lit seaside background by clicking a button in the top right corner.</li>
-              </ul>
-            </div>
+          <div class="about-info first">
+            <h2>About My Website</h2>
+            <hr />
+            <p>
+              My Travel Diary is a website created to document the memories of
+              my travels with my girlfriend after the COVID-19 pandemic. Many
+              Koreans record their cherished travel moments in various but
+              common ways, such as photos, blogs, or diaries. However, as a web
+              developer, I wanted to personally build a website where I could
+              document our memories one by one. Through this process, I aim to
+              continuously improve my skills by adding new features to the site,
+              making the experience even more meaningful. Thank you for visiting
+              my humble page. I hope you have a great time!
+            </p>
+          </div>
+          <div class="about-info second">
+            <h2>Features of My Website</h2>
+            <hr />
+            <ul>
+              <li>
+                Users can check the basic information about the countries of the
+                cities I have visited on the main page, including the capital,
+                language, currency, time zone, famous cities, best travel
+                seasons, and more.
+              </li>
+              <li>
+                On the main page, when users hover over the box introducing each
+                country, they can see a list of cities I have visited. By
+                clicking on a city name, they will be redirected to the
+                respective city page.
+              </li>
+              <li>
+                On each city’s introduction page, users can explore famous
+                tourist attractions, local foods, and photos I personally took
+                in a slider format.
+              </li>
+              <li>
+                Users can navigate between pages using the top navigation bar.
+                On the About page, they can find a brief introduction to my
+                website and click on the map icon to view all the cities I have
+                visited at a glance on a map.
+              </li>
+              <li>
+                On the Contact page, users can send me their basic information
+                and navigate to my social media and GitHub.
+              </li>
+              <li>
+                Users can experience a flexible website on any device thanks to
+                the responsive web design applied to the site.
+              </li>
+            </ul>
+          </div>
+          <div class="about-info third">
+            <h2>Wait for These Features</h2>
+            <hr />
+            <ul>
+              <li>
+                I plan to apply more diverse animations to each page,
+                transforming the website into a more engaging and enjoyable
+                experience.
+              </li>
+              <li>
+                I plan to create a bulletin board where users can visit the
+                pages of the places I have traveled to and share various
+                opinions and useful information.
+              </li>
+              <li>
+                Instead of a 2D flat map, I plan to add a feature that allows
+                users to explore various countries I will travel to by rotating
+                a 3D globe, making it easier and more enjoyable to access travel
+                information.
+              </li>
+              <li>
+                I plan to add a feature that allows users to switch between a
+                clear, blue ocean background and a sunset-lit seaside background
+                by clicking a button in the top right corner.
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <!-- <div class="map-container">
-        <img src="../assets/imgs/asia-map.jpg" alt="map" class="map-image" />
-        <div class="pin-seoul">
-          <a href="../pages/seoul.html">
-            <img src="../assets/imgs/pin.png" alt="pin-seoul" />
-          </a>
+      <section class="map-section">
+        <input type="checkbox" id="toggle-map" hidden />
+        <label for="toggle-map" class="map-toggle">
+          <img src="../assets/imgs/icons/map.svg" alt="map-icon" />
+        </label>
+        <div class="map-container">
+          <img
+            src="../assets/imgs/asia-map.jpg"
+            alt="asia-map"
+            class="asia-map-image"
+          />
+          <div class="pin-seoul">
+            <a href="../pages/seoul.html">
+              <img src="../assets/imgs/pin.png" alt="pin-seoul" />
+            </a>
+          </div>
+          <div class="pin-tokyo">
+            <a href="../pages/tokyo.html">
+              <img src="../assets/imgs/pin.png" alt="pin-tokyo" />
+            </a>
+          </div>
+          <div class="pin-osaka">
+            <a href="../pages/osaka.html">
+              <img src="../assets/imgs/pin.png" alt="pin-osaka" />
+            </a>
+          </div>
+          <div class="pin-fukuoka">
+            <a href="../pages/fukuoka.html">
+              <img src="../assets/imgs/pin.png" alt="pin-fukuoka" />
+            </a>
+          </div>
+          <div class="pin-danang">
+            <a href="../pages/danang.html">
+              <img src="../assets/imgs/pin.png" alt="pin-danang" />
+            </a>
+          </div>
+          <div class="pin-bohol">
+            <a href="../pages/bohol.html">
+              <img src="../assets/imgs/pin.png" alt="pin-bohol" />
+            </a>
+          </div>
+          <div class="pin-kota">
+            <a href="../pages/kota.html">
+              <img src="../assets/imgs/pin.png" alt="pin-kota" />
+            </a>
+          </div>
         </div>
-        <div class="pin-tokyo">
-          <a href="../pages/tokyo.html">
-            <img src="../assets/imgs/pin.png" alt="pin-tokyo" />
-          </a>
-        </div>
-        <div class="pin-osaka">
-          <a href="../pages/osaka.html">
-            <img src="../assets/imgs/pin.png" alt="pin-osaka" />
-          </a>
-        </div>
-        <div class="pin-fukuoka">
-          <a href="../pages/fukuoka.html">
-            <img src="../assets/imgs/pin.png" alt="pin-fukuoka" />
-          </a>
-        </div>
-        <div class="pin-danang">
-          <a href="../pages/danang.html">
-            <img src="../assets/imgs/pin.png" alt="pin-danang" />
-          </a>
-        </div>
-        <div class="pin-bohol">
-          <a href="../pages/bohol.html">
-            <img src="../assets/imgs/pin.png" alt="pin-bohol" />
-          </a>
-        </div>
-        <div class="pin-kota">
-          <a href="../pages/kota.html">
-            <img src="../assets/imgs/pin.png" alt="pin-kota" />
-          </a>
-        </div>
-        </div>
-      </div> -->
+      </section>
     </main>
 
     <hr class="div-main-footer" />
