@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Seoul</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
 
   <body>
+    <input type="checkbox" id="toggleColorCheckbox" hidden />
+
     <!-- header -->
     <header>
       <nav class="desktop-nav">
         <div class="title-navbar">
           <div class="title-logo">
-            <p>My Travel Diary</p>
+            <p>Welcome to Seoul</p>
           </div>
           <div class="nav-options">
             <ul>
@@ -22,11 +28,18 @@
           </div>
         </div>
       </nav>
-      <hr class="div-header-main" />
-      <div class="header-title">
-        <h1>Welcome to Seoul</h1>
+      <div class="headerUtilities">
+        <div class="toggleColor">
+          <label for="toggleColorCheckbox">
+            <img src="../assets/imgs/icons/sun.svg" alt="sun" />
+          </label>
+        </div>
       </div>
+      <!-- <div class="header-title">
+        <h1>Welcome to Seoul</h1>
+      </div> -->
     </header>
+    <hr class="div-header-main" />
 
     <!-- Introduction to each cities contents -->
     <main>
