@@ -12,7 +12,7 @@
 /*********************** body ***********************/
 body {
   font-family: "Poppins", sans-serif;
-  min-height: 150vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,11 +27,91 @@ body {
 }
 
 /*********************** all pages header ***********************/
+/* for togglemenu & togglecolor */
+
+.toggleMenu .toggleColor {
+  width: 24px;
+  height: 24px;
+  display: none;
+}
+
+#toggleMenuCheckbox,
+#toggleColorCheckbox {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.openMenu {
+  font-weight: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(16px);
+  flex-direction: column;
+  padding: 16px 24px;
+  gap: 32px;
+  display: none;
+}
+
+.closeMenu {
+  align-self: flex-end;
+  font-size: 1.5rem;
+}
+
+.openMenu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  gap: 48px;
+}
+
+.openMenu ul li a:link,
+.openMenu ul li a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+
+.openMenu ul li a:hover {
+  background: linear-gradient(to right, #ffa500 0%, #fff300 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#currentPage {
+  background: linear-gradient(to right, #ffa500 0%, #ff0000 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: fit-content;
+}
+
+#toggleMenuCheckbox:checked ~ .openMenu {
+  display: flex;
+}
+
+#toggleMenuCheckbox:checked ~ footer .back-to-top,
+#toggleMenuCheckbox:checked ~ footer .back-to-home {
+  display: none;
+}
+
+.nav-options {
+  display: block;
+}
+
+.headerUtilities {
+  display: none;
+}
+
 header {
   width: 100%;
 }
 
-nav {
+.desktop-nav {
   padding: 16px 32px;
   padding-top: 0;
   min-height: 50px;
@@ -57,8 +137,8 @@ nav {
 
 .nav-options ul {
   display: flex;
-  gap: 3rem;
-  align-items: center;
+  gap: 2rem;
+  align-items: flex-end;
   list-style: none;
 }
 
@@ -351,7 +431,7 @@ main {
   height: auto;
   justify-content: center;
   align-items: center;
-  
+
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -369,7 +449,6 @@ main {
 #toggle-map:checked ~ .map-container {
   display: flex;
 }
-
 
 /* same style for all pin */
 .pin-seoul,
@@ -412,7 +491,7 @@ main {
 
 .pin-danang {
   top: 60.3%;
-  left: 27.0%;
+  left: 27%;
 }
 
 .pin-bohol {
@@ -516,6 +595,107 @@ main {
   display: block;
 }
 
+/****************************************************** Contact.html ******************************************************/
+.contact {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  width: 80%;
+  overflow: visible;
+}
+
+.contact-area h1 {
+  font-size: 3rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  width: 80%;
+  padding: 32px;
+}
+
+.contact-info-name,
+.contact-info-phone,
+.contact-info-email,
+.contact-info-message {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 80%;
+}
+
+.contact-info h2 {
+  text-align: start;
+}
+
+.contact-info input {
+  width: 100%;
+  height: 50px;
+  background-color: #f9f9f9;
+  border: 1px solid #bdbdbd;
+  border-radius: 16px;
+  font-size: 1rem;
+  padding-left: 5%;
+}
+
+.contact-info textarea {
+  width: 100%;
+  height: 100px;
+  background-color: #f9f9f9;
+  border: 1px solid #bdbdbd;
+  border-radius: 16px;
+  font-size: 1rem;
+  padding-left: 5%;
+  padding-top: 1%;
+  resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Poppins";
+  color: #bdbdbd;
+}
+
+.send-bt-area {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.send-bt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 50px;
+  background-color: #23a6f0;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 20px;
+  margin-right: 10%;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.send-bt:hover {
+  background-color: #0080ff;
+}
 
 /****************************************************** each cities info .html ******************************************************/
 .each-cities-info {
@@ -578,275 +758,7 @@ main {
   font-size: 1rem;
 }
 
-/****************************************************** Footer ******************************************************/
-.footer {
-  width: 100%;
-}
-
-.footer-content {
-  padding: 16px 32px;
-  padding-bottom: 0;
-  display: flex;
-}
-
-.footer-content p {
-  font-size: 0.813rem;
-}
-
-/****************************************************** below side for change to course2 final ******************************************************/
-/****************************************************** below side for change to course2 final ******************************************************/
-/****************************************************** below side for change to course2 final ******************************************************/
-/****************************************************** below side for change to course2 final ******************************************************/
-
-/*********************** about.html ***********************/
-/* .map-container {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 100px;
-  z-index: 1;
-}
-
-.asia-map-image {
-  width: 90%;
-  max-width: 800px;
-  opacity: 0.85;
-}
-
-.pin-seoul,
-.pin-tokyo,
-.pin-osaka,
-.pin-fukuoka,
-.pin-danang,
-.pin-bohol,
-.pin-kota {
-  position: absolute;
-  transform: translate(
-    -50%,
-    -50%
-  );
-  width: 30px;
-  z-index: 10;
-}
-
-.pin-seoul {
-  top: 22.5%;
-  left: 57.6%;
-}
-
-.pin-tokyo {
-  top: 25.4%;
-  left: 77.3%;
-}
-
-.pin-osaka {
-  top: 27.4%;
-  left: 70.7%;
-}
-
-.pin-fukuoka {
-  top: 29.3%;
-  left: 62.5%;
-}
-
-.pin-danang {
-  top: 60.3%;
-  left: 27.3%;
-}
-
-.pin-bohol {
-  top: 71.4%;
-  left: 52.7%;
-}
-
-.pin-kota {
-  top: 81%;
-  left: 37.4%;
-}
-
-.pin-seoul img,
-.pin-tokyo img,
-.pin-osaka img,
-.pin-fukuoka img,
-.pin-danang img,
-.pin-bohol img,
-.pin-kota img {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-}
-
-.pin-seoul:hover,
-.pin-tokyo:hover,
-.pin-osaka:hover,
-.pin-fukuoka:hover,
-.pin-danang:hover,
-.pin-bohol:hover,
-.pin-kota:hover {
-  animation: bounce 0.5s ease infinite alternate;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    transform: translate(-50%, calc(-50% - 5px)) scale(1.2);
-  }
-}
-
-.pin-seoul::after,
-.pin-tokyo::after,
-.pin-osaka::after,
-.pin-fukuoka::after,
-.pin-danang::after,
-.pin-bohol::after,
-.pin-kota::after {
-  display: none;
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 5px 8px;
-  border-radius: 5px;
-  font-size: 12px;
-  z-index: 20;
-}
-
-.pin-seoul::after {
-  content: "Seoul";
-}
-.pin-tokyo::after {
-  content: "Tokyo";
-}
-.pin-osaka::after {
-  content: "Osaka";
-}
-.pin-fukuoka::after {
-  content: "Fukuoka";
-}
-.pin-danang::after {
-  content: "Da Nang";
-}
-.pin-bohol::after {
-  content: "Bohol";
-}
-.pin-kota::after {
-  content: "Kota Kinabalu";
-}
-
-.pin-seoul:hover::after,
-.pin-tokyo:hover::after,
-.pin-osaka:hover::after,
-.pin-fukuoka:hover::after,
-.pin-danang:hover::after,
-.pin-bohol:hover::after,
-.pin-kota:hover::after {
-  display: block;
-} */
-
-/*********************** back to main & back to top design ***********************/
-/* .back-to-main {
-  position: fixed;
-  left: 10px;
-  bottom: 10px;
-  z-index: 100;
-}
-
-.back-to-top {
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  z-index: 100;
-}
-
-.back-to-main a,
-.back-to-top a {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #e1306c;
-  color: #fff !important;
-  text-decoration: none !important;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: background 0.3s;
-}
-
-.back-to-main a:visited,
-.back-to-main a:link .back-to-top a:visited,
-.back-to-top a:link {
-  color: #fff !important;
-  text-decoration: none !important;
-}
-
-.back-to-main a:hover,
-.back-to-top a:hover {
-  background-color: #c13584;
-}
-
-.back-to-main a:active,
-.back-to-top a:active {
-  border: solid 2px white;
-} */
-
-/*********************** container2 (attractions) ***********************/
-/* .each-cities-info.attraction .attractions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.each-cities-info.attraction .attraction {
-  text-align: center;
-}
-
-.each-cities-info.attraction .attraction img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.each-cities-info.attraction .attraction .caption {
-  display: inline;
-  font-size: 16px;
-} */
-
-/*********************** container3 (food) ***********************/
-/* .info-box.third .foods {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.info-box.third .food {
-  text-align: center;
-}
-
-.info-box.third .food img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.info-box.third .food .caption {
-  display: inline;
-  font-size: 16px;
-} */
-
-/*********************** photo-slider design ***********************/
+/* photo-slider design */
 .photo-container {
   width: 90%;
   max-width: 1300px;
@@ -883,6 +795,59 @@ main {
   }
 }
 
+/****************************************************** Footer ******************************************************/
+.footer {
+  width: 100%;
+}
+
+.footer-content {
+  padding: 16px 32px;
+  padding-bottom: 0;
+  display: flex;
+}
+
+.footer-content p {
+  font-size: 0.813rem;
+}
+
+/****************************************************** Media Query ******************************************************/
+/* Common Laptop */
+@media screen and (max-width: 1023px) {
+}
+
+/* Tablet */
+@media screen and (max-width: 767px) {
+}
+
+/* Mobile */
+@media screen and (max-width: 639px) {
+  .nav-options {
+    display: none;
+  }
+
+  .toggleMenu,
+  .toggleColor {
+    display: block;
+  }
+
+  header {
+    position: relative;
+  }
+  
+  .headerUtilities {
+    position: absolute;
+    top: 15px;
+    right: 31px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+}
+/****************************************************** below side for change to course2 final ******************************************************/
+/****************************************************** below side for change to course2 final ******************************************************/
+/****************************************************** below side for change to course2 final ******************************************************/
+/****************************************************** below side for change to course2 final ******************************************************/
 /****************************************************** Footer ******************************************************/
 
 .instagram-link {
