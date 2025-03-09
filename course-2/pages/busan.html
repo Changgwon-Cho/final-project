@@ -5,6 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Busan</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
-  <body></body>
+
+  <body>
+    <input type="checkbox" id="toggleColorCheckbox" hidden />
+
+    <!-- header -->
+    <header>
+      <nav class="desktop-nav">
+        <div class="title-navbar">
+          <div class="title-logo">
+            <p>Welcome to Busan</p>
+          </div>
+          <div class="nav-options">
+            <ul>
+              <img src="../assets/imgs/icons/sun.svg" alt="sun" />
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="headerUtilities">
+        <div class="toggleColor">
+          <label for="toggleColorCheckbox">
+            <img src="../assets/imgs/icons/sun.svg" alt="sun" />
+          </label>
+        </div>
+      </div>
+    </header>
+    <hr class="div-header-main" />
+
+    <!-- Introduction to each cities contents -->
+    <main>
+      <div class="each-cities-info">
+        <!-- Introduction to cities attractions -->
+        <div class="each-cities-info-attraction">
+          <h2>Tourist Attractions in Busan</h2>
+          <hr />
+          <div class="attractions">
+            <div class="attraction">
+              <img
+                src="../assets/imgs/busan/haeundae.webp"
+                alt="Haeundae"
+              />
+              <div class="caption">Haeundae</div>
+            </div>
+            <div class="attraction">
+              <img
+                src="../assets/imgs/busan/gamcheon.jpg"
+                alt="Gamcheon Culture Village"
+              />
+              <div class="caption">Gamcheon Culture Village</div>
+            </div>
+            <div class="attraction">
+              <img
+                src="../assets/imgs/busan/gwangalli.jpeg"
+                alt="Gwangalli Beach"
+              />
+              <div class="caption">Gwangalli Beach</div>
+            </div>
+          </div>
+        </div>
+        <!-- Introduction to cities food -->
+        <div class="each-cities-info-food">
+          <h2>Food in Busan</h2>
+          <hr />
+          <div class="foods">
+            <div class="food">
+              <img src="../assets/imgs/busan/porksoup.jpg" alt="Pork Rice Soup" />
+              <div class="caption">Pork Rice Soup</div>
+            </div>
+            <div class="food">
+              <img
+                src="../assets/imgs/busan/wheatnoodles.jpg"
+                alt="Wheat Noodles"
+              />
+              <div class="caption">Wheat Noodles</div>
+            </div>
+            <div class="food">
+              <img
+                src="../assets/imgs/busan/rawfish.jpg"
+                alt="Sliced Raw Fish"
+              />
+              <div class="caption">Sliced Raw Fish</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo slider -->
+      <div class="photo-container">
+        <div class="photo-slider">
+          <img src="../assets/imgs/busan/photo1.jpeg" alt="photo1" />
+          <img src="../assets/imgs/busan/photo2.jpeg" alt="photo2" />
+          <img src="../assets/imgs/busan/photo3.jpeg" alt="photo3" />
+          <img src="../assets/imgs/busan/photo4.jpeg" alt="photo4" />
+          <img src="../assets/imgs/busan/photo5.jpeg" alt="photo5" />
+          <img src="../assets/imgs/busan/photo6.jpeg" alt="photo6" />
+          <img src="../assets/imgs/busan/photo7.jpeg" alt="photo7" />
+          <img src="../assets/imgs/busan/photo8.jpeg" alt="photo8" />
+          <img src="../assets/imgs/busan/photo9.jpeg" alt="photo9" />
+          <img src="../assets/imgs/busan/photo10.jpeg" alt="photo10" />
+          <!-- the same images for cascade effect -->
+          <img src="../assets/imgs/busan/photo1.jpeg" alt="photo1" />
+          <img src="../assets/imgs/busan/photo2.jpeg" alt="photo2" />
+          <img src="../assets/imgs/busan/photo3.jpeg" alt="photo3" />
+          <img src="../assets/imgs/busan/photo4.jpeg" alt="photo4" />
+          <img src="../assets/imgs/busan/photo5.jpeg" alt="photo5" />
+          <img src="../assets/imgs/busan/photo6.jpeg" alt="photo6" />
+          <img src="../assets/imgs/busan/photo7.jpeg" alt="photo7" />
+          <img src="../assets/imgs/busan/photo8.jpeg" alt="photo8" />
+          <img src="../assets/imgs/busan/photo9.jpeg" alt="photo9" />
+          <img src="../assets/imgs/busan/photo10.jpeg" alt="photo10" />
+        </div>
+      </div>
+    </main>
+
+    <hr class="div-main-footer" />
+    <!-- footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="back-to-home">
+          <a href="../index.html">
+            <img src="../assets/imgs/icons/home.svg" alt="back-to-home" />
+          </a>
+        </div>
+        <p>&copy 2025 My Travel Diary</p>
+        <div class="back-to-top">
+          <a href="#">
+            <img src="../assets/imgs/icons/back-to-top.svg" alt="back-to-top" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
