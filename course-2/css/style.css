@@ -716,7 +716,7 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   padding: 32px;
-  width: 80%;
+  width: 90%;
   overflow: visible;
 }
 
@@ -757,6 +757,7 @@ header {
   border: 1px solid #bdbdbd;
   border-radius: 16px;
   font-size: 1rem;
+  font-family: "Poppins";
   padding-left: 5%;
 }
 
@@ -767,6 +768,7 @@ header {
   border: 1px solid #bdbdbd;
   border-radius: 16px;
   font-size: 1rem;
+  font-family: "Poppins";
   padding-left: 5%;
   padding-top: 2%;
   resize: none;
@@ -789,6 +791,7 @@ textarea::placeholder {
   justify-content: center;
   align-items: center;
   width: 20%;
+  min-width: 150px;
   height: 50px;
   background-color: #23a6f0;
   border: none;
@@ -796,6 +799,7 @@ textarea::placeholder {
   padding: 10px 20px;
   margin-right: 10%;
   font-size: 1rem;
+  font-family: "Poppins";
   color: #ffffff;
 }
 
@@ -1008,9 +1012,36 @@ textarea::placeholder {
   .about-info h2 {
     font-size: 1.5rem;
   }
-  
+
   .map-section {
     margin-top: 75px;
+  }
+
+  /* contact.html */
+  .contact-area h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-area {
+    width: 100%;
+  }
+
+  .contact-info {
+    width: 100%;
+  }
+
+  .contact-info textarea {
+    padding-top: 3%;
+  }
+
+  /* each cities info .html */
+  .each-cities-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .each-cities-info-attraction .attraction .caption,
+  .each-cities-info-food .food .caption {
+    font-size: 0.937rem;
   }
 }
 
@@ -1095,11 +1126,58 @@ textarea::placeholder {
     font-size: 1.5rem;
   }
 
-  .about-info p, .about-info li {
+  .about-info p,
+  .about-info li {
     font-size: 0.813rem;
   }
 
   .map-section {
     margin-top: 50px;
+  }
+
+  /* contact.html */
+  .contact-area {
+    gap: 1rem;
+  }
+
+  .contact-area h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info h2 {
+    font-size: 1.25rem;
+  }
+
+  .contact-info input {
+    font-size: 0.813rem;
+  }
+
+  .contact-info textarea {
+    font-size: 0.813rem;
+    padding-top: 3%;
+  }
+
+  .send-bt-area {
+    justify-content: center;
+  }
+
+  .send-bt {
+    margin: 0;
+    min-width: 110px;
+    font-size: 0.813rem;
+  }
+
+  .snslink-area {
+    margin-top: 10px;
+  }
+
+  /* each cities info .html */
+  .each-cities-info h2 {
+    font-size: 1rem;
+  }
+
+  .each-cities-info-attraction .attraction .caption,
+  .each-cities-info-food .food .caption {
+    font-size: 0.813rem;
   }
 }
