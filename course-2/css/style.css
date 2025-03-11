@@ -413,6 +413,7 @@ header {
 
 .country-info.left:hover,
 .country-info.right:hover {
+  
   transform: translateY(-5px);
   transition: transform 0.3s ease-in-out;
 }
@@ -887,13 +888,13 @@ textarea::placeholder {
 
 /****************************************************** each cities info .html ******************************************************/
 /*********************** each city pages header ***********************/
-.header-title {
+/* .header-title {
   font-family: Dancing Script, Arial, sans-serif;
   -webkit-text-stroke: 2px #ffd700;
   color: var(--title-logo-color);
-  font-size: 4rem;
+  font-size: 3rem;
   width: 100%;
-}
+} */
 
 .each-cities-info {
   width: 90%;
