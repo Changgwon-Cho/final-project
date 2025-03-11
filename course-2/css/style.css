@@ -87,8 +87,6 @@ body:has(#toggleColorCheckbox:checked) .footer-content p {
 
 body:has(#toggleColorCheckbox:checked) .div-header-main,
 body:has(#toggleColorCheckbox:checked) .country-info hr,
-body:has(#toggleColorCheckbox:checked) .country-info.left img,
-body:has(#toggleColorCheckbox:checked) .country-info.right img,
 body:has(#toggleColorCheckbox:checked) .about-area hr {
   border: 1px solid #3747bf;
 }
@@ -426,9 +424,9 @@ header {
   height: auto;
   max-height: 200px;
   min-height: 130px;
-  object-fit: cover;
-  border: solid 1px #8fd7ef;
+  object-fit: contain;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 
 .country-info.left .content-container .info-container ul,
