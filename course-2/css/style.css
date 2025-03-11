@@ -302,7 +302,7 @@ header {
   border: 1px solid #b2ffff;
 }
 
-/****************************************************** Index.html ******************************************************/
+/****************************************************** index.html ******************************************************/
 .country-list {
   width: 100%;
   display: flex;
@@ -455,7 +455,7 @@ header {
   -webkit-text-fill-color: transparent;
 }
 
-/****************************************************** About.html ******************************************************/
+/****************************************************** about.html ******************************************************/
 /* about info section */
 .about-area {
   width: 90%;
@@ -701,7 +701,7 @@ header {
   display: block;
 }
 
-/****************************************************** Contact.html ******************************************************/
+/****************************************************** contact.html ******************************************************/
 .contact {
   display: flex;
   justify-content: center;
@@ -967,14 +967,14 @@ textarea::placeholder {
   font-size: 0.813rem;
 }
 
-/****************************************************** Media Query ******************************************************/
+/****************************************************** media Query ******************************************************/
 /* Common Laptop */
 @media screen and (max-width: 1023px) {
-
 }
 
 /* Tablet */
 @media screen and (max-width: 767px) {
+  /* index.html */
   .content-container {
     flex-direction: column;
     gap: 1rem;
@@ -998,15 +998,25 @@ textarea::placeholder {
     right: -33%;
     width: 30%;
   }
-  
+
   .rightside-famous-cities-box {
     left: -33%;
     width: 30%;
+  }
+
+  /* about.html */
+  .about-info h2 {
+    font-size: 1.5rem;
+  }
+  
+  .map-section {
+    margin-top: 75px;
   }
 }
 
 /* Mobile */
 @media screen and (max-width: 639px) {
+  /* index.html */
   .nav-options {
     display: none;
   }
@@ -1027,16 +1037,17 @@ textarea::placeholder {
     display: flex;
     gap: 1rem;
   }
-  
+
+  /* index.html */
   .country-info h2 {
     font-size: 1rem;
   }
-  
+
   .country-info.left,
   .country-info.right {
     width: 70%;
   }
-  
+
   .content-container {
     gap: 0.5rem;
   }
@@ -1046,7 +1057,7 @@ textarea::placeholder {
     justify-content: center;
     object-fit: cover;
   }
-  
+
   .country-info.left img,
   .country-info.right img {
     width: 100%;
@@ -1061,22 +1072,34 @@ textarea::placeholder {
   .country-info.right .content-container .info-container li {
     font-size: 0.813rem;
   }
-  
+
   .leftside-famous-cities-box {
     right: -43%;
     width: 40%;
   }
-  
+
   .rightside-famous-cities-box {
     left: -43%;
     width: 40%;
   }
 
-  .leftside-famous-cities-box h3, .rightside-famous-cities-box h3 {
+  .leftside-famous-cities-box h3,
+  .rightside-famous-cities-box h3,
+  .leftside-famous-cities-box a,
+  .rightside-famous-cities-box a {
     font-size: 0.813rem;
   }
 
-  .leftside-famous-cities-box a, .rightside-famous-cities-box a {
+  /* about.html */
+  .about-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-info p, .about-info li {
     font-size: 0.813rem;
+  }
+
+  .map-section {
+    margin-top: 50px;
   }
 }
