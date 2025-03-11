@@ -12,7 +12,7 @@
 
 - Travel log and information with photos
 - Responsive web design
-- Apply a background color inversion effect, transitioning between an ocean blue background and a starry night sky background.
+- Apply a background color inversion effect, transitioning between an ocean blue background and a starry night sky background
 - Selecting regions using a rotating globe instead of a flat map (Coming Soon)
 - Providing more information about each country/city in a chat app format (Coming Soon)
 
