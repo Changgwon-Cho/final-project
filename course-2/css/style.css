@@ -387,7 +387,7 @@ header {
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: solid 1px #8fd7ef;
-  opacity: 0;
+  opacity: 1;
 }
 
 .rightside-famous-cities-box {
@@ -1118,7 +1118,7 @@ textarea::placeholder {
   .rightside-famous-cities-box h3,
   .leftside-famous-cities-box a,
   .rightside-famous-cities-box a {
-    font-size: 0.813rem;
+    font-size: 0.75rem;
   }
 
   /* about.html */
