@@ -58,18 +58,25 @@ body:has(#toggleColorCheckbox:checked) .toggleColorMobile label img.moon {
   display: flex;
 }
 
-body:has(#toggleColorCheckbox:checked):has(#toggleMenuCheckbox:checked) .openMenu nav li a:hover {
+body:has(#toggleColorCheckbox:checked):has(#toggleMenuCheckbox:checked)
+  .openMenu
+  nav
+  li
+  a:hover {
   background: linear-gradient(to right, #8a2be2 0%, #3b4cca 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-body:has(#toggleColorCheckbox:checked):has(#toggleMenuCheckbox:checked) .openMenu nav li a#currentPage {
+body:has(#toggleColorCheckbox:checked):has(#toggleMenuCheckbox:checked)
+  .openMenu
+  nav
+  li
+  a#currentPage {
   background: linear-gradient(to right, #8a2be2 0%, #47eaf0 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 
 /* for desktop nav */
 body:has(#toggleColorCheckbox:checked) .toggleColorDesktop label img.sun {
