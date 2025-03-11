@@ -387,7 +387,7 @@ header {
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: solid 1px #8fd7ef;
-  opacity: 1;
+  opacity: 0;
 }
 
 .rightside-famous-cities-box {
@@ -401,7 +401,7 @@ header {
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: solid 1px #8fd7ef;
-  opacity: 1;
+  opacity: 0;
 }
 
 @keyframes fadeHold {
@@ -1034,6 +1034,11 @@ textarea::placeholder {
     padding-top: 3%;
   }
 
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 0.813rem;
+  }
+
   /* each cities info .html */
   .each-cities-info h2 {
     font-size: 1.5rem;
@@ -1155,6 +1160,11 @@ textarea::placeholder {
   .contact-info textarea {
     font-size: 0.813rem;
     padding-top: 3%;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 0.75rem;
   }
 
   .send-bt-area {
