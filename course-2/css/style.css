@@ -87,8 +87,43 @@ body:has(#toggleColorCheckbox:checked) .toggleColorDesktop label img.moon {
   display: flex;
 }
 
+/* other elements toggleColor */
+.back-to-top img {
+  content: url("../assets/imgs/icons/back-to-top.svg");
+}
+
+.back-to-home img {
+  content: url("../assets/imgs/icons/home.svg");
+}
+
+.map-toggle img {
+  content: url("../assets/imgs/icons/map.svg");
+}
+
+.toggleMenu label img {
+  content: url("../assets/imgs/icons/menu-hamburger.svg");
+}
+
+body:has(#toggleColorCheckbox:checked) .back-to-top img {
+  content: url("../assets/imgs/icons/white-back-to-top.svg");
+}
+
+body:has(#toggleColorCheckbox:checked) .back-to-home img {
+  content: url("../assets/imgs/icons/white-home.svg");
+}
+
+body:has(#toggleColorCheckbox:checked) .map-toggle img {
+  content: url("../assets/imgs/icons/white-map.svg");
+}
+
+body:has(#toggleColorCheckbox:checked) .toggleMenu label img {
+  content: url("../assets/imgs/icons/white-menu-hamburger.svg");
+}
+
 body:has(#toggleColorCheckbox:checked) nav li a,
-body:has(#toggleColorCheckbox:checked) .footer-content p {
+body:has(#toggleColorCheckbox:checked) .footer-content p,
+body:has(#toggleColorCheckbox:checked) .footer-content a,
+body:has(#toggleColorCheckbox:checked) .faq-title {
   color: var(--white-color);
 }
 
@@ -100,6 +135,12 @@ body:has(#toggleColorCheckbox:checked) .about-area hr {
 
 body:has(#toggleColorCheckbox:checked) .nav-options ul li a:hover {
   background: linear-gradient(to right, #8a2be2 0%, #3b4cca 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body:has(#toggleColorCheckbox:checked) .footer-content a:hover {
+  background: linear-gradient(to right, #131f50 0%, #3b4cca 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -413,7 +454,6 @@ header {
 
 .country-info.left:hover,
 .country-info.right:hover {
-  
   transform: translateY(-5px);
   transition: transform 0.3s ease-in-out;
 }
@@ -1040,6 +1080,52 @@ textarea::placeholder {
   font-size: 0.813rem;
 }
 
+.footer-content a {
+  text-decoration: none;
+  color: var(--black-color);
+}
+
+.footer-content a:hover {
+  background: linear-gradient(to right, #ffa500 0%, #fff300 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/****************************************************** FAQ.html ******************************************************/
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.faq-title {
+  font-size: 2rem;
+}
+
+.faq-item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  background: #f8f8f8;
+}
+
+.faq-item summary {
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  padding: 10px;
+  background: #fafafa;
+}
+
 /****************************************************** media Query ******************************************************/
 /* Common Laptop */
 @media screen and (max-width: 1023px) {
@@ -1120,6 +1206,15 @@ textarea::placeholder {
 
   .each-cities-info-attraction .attraction .caption,
   .each-cities-info-food .food .caption {
+    font-size: 0.937rem;
+  }
+
+  /* faq.html */
+  .faq-title {
+    font-size: 1.75rem;
+  }
+
+  .faq-item p {
     font-size: 0.937rem;
   }
 }
@@ -1286,6 +1381,15 @@ textarea::placeholder {
 
   .each-cities-info-attraction .attraction .caption,
   .each-cities-info-food .food .caption {
+    font-size: 0.813rem;
+  }
+
+  /* faq.html */
+  .faq-title {
+    font-size: 1.5rem;
+  }
+
+  .faq-item p {
     font-size: 0.813rem;
   }
 }
