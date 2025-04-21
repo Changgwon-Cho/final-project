@@ -1,3 +1,3 @@
 # Final-Project
 
-repository for fianl projects in Tamwood
+repository for final projects in Tamwood
