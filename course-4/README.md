@@ -15,6 +15,8 @@ You can preview the site here:
 ---
 
 ## 📁 Project Structure
+
+```bash
 portfolio-website/
 ├── assets/
 │   ├── css/
@@ -33,7 +35,7 @@ portfolio-website/
 ├── manifest.json
 ├── serviceWorker.js
 └── README.md
-
+```
 ---
 
 ## 🧑‍💻 About Me
