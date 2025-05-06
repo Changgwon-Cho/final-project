@@ -30,7 +30,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   background: linear-gradient(to bottom, #87ceeb 0%, #b2ffff 50%, #fdeeb7 100%);
-  background-attachment: fixed;
   background-size: cover;
   overflow-y: auto;
   text-align: center;
@@ -42,7 +41,6 @@ body {
 /* changed the background color and icon */
 body:has(#toggleColorCheckbox:checked) {
   background: linear-gradient(180deg, #0a0f24, #1a2a6c, #3b4cca, #8a2be2);
-  background-attachment: fixed;
 }
 
 body:has(#toggleColorCheckbox:checked) .starry-night {
