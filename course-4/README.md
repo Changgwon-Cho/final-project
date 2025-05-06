@@ -26,10 +26,9 @@ portfolio-website/
 │   │   ├── main.js
 │   │   └── swiper-bundle.min.js
 │   ├── img/
-│   │   └── [all images used in site]
+│   │   └── ...
 │   ├── pdf/
-│   │   └── Changgwon Cho_Resume.pdf
-│   └── PwaImages/
+│   │   └── Changgwon_Cho_Resume.pdf
 ├── index.html
 ├── 404.html
 ├── manifest.json
