@@ -27,8 +27,8 @@ portfolio-website/
 │   │   └── swiper-bundle.min.js
 │   ├── img/
 │   │   └── ...
-│   ├── pdf/
-│   │   └── Changgwon_Cho_Resume.pdf
+│   └── pdf/
+│       └── Changgwon_Cho_Resume.pdf
 ├── index.html
 ├── 404.html
 ├── manifest.json
