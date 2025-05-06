@@ -10,7 +10,7 @@ It showcases my background, skills, projects, and contact information in a moder
 ## 🔗 Live Preview
 
 You can preview the site here:  
-📍 [changgwon-cho.github.io/portfolio]([https://changgwon-cho.github.io/portfolio](https://changgwon-cho.github.io/final-project/course-4/))
+📍 [changgwon-cho.github.io/final-project/course-4](https://changgwon-cho.github.io/final-project/course-4/)
 
 ---
 
